@@ -1,18 +1,31 @@
 package com.techelevator;
 
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 
-public class MainMenu extends Application{
+public class MainMenu{
 
-Scanner scanner = new Scanner(System.in);
+    public void menuOptions () {
+        Stock stock = new Stock();
 
-    private Scanner userInput;
+        Scanner UserInput = new Scanner(System.in);
+        System.out.println("Please enter (1) to display the vending machine items");
 
-    System.out.println("enter numbers 1-4");
-    String menuOptions = userInput.nextLine();
+
+        String typein = UserInput.nextLine();
+
+        System.out.println("Stock:\n" );
+
+
+
+
+
+
+
+    }
 
 
 
 }
+
+
