@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Items  {
+public class Items extends Stock {
 
     private String code;
 

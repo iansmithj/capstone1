@@ -19,17 +19,18 @@ public class Stock {
                 stockInfo.add(parts);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("This is not an appropriate file.");
         }
 
         return stockInfo;
     }
 
-    // Example usage
     public static void main(String[] args) {
         Stock stock = new Stock();
         List<String[]> stockInfo = stock.pullSplit();
         for (String[] info : stockInfo) {
+
+            
 
             System.out.println(Arrays.toString(info));
         }
