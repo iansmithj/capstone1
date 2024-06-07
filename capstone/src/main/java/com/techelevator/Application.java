@@ -9,7 +9,10 @@ public class Application {
 	}
 
 	public void run() {
+		MainMenu menu = new MainMenu();
+		menu.menuOptions();
 
 
 	}
 }
+
