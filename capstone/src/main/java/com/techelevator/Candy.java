@@ -8,7 +8,7 @@ public class Candy extends Item {
         super(slot, name, price, category);
     }
 
-    @Override
+
     public String getDispenseMessage() {
         return " Munch Munch, Yum!";
     }

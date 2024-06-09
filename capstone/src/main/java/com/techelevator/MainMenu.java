@@ -12,7 +12,10 @@ import java.util.Scanner;
 public class MainMenu {
 
     private Money money = new Money();
+
     private Inventory stock = new Inventory();
+
+
 
     public void menuOptions() {
         stock.load();
@@ -47,11 +50,11 @@ public class MainMenu {
         }
     }
 
-    private void purchaseMenu() {
+ private void purchaseMenu() {
         Scanner userInput = new Scanner(System.in);
 
         while (true) {
-            System.out.printf("Current Money Provided: $%.2\n", money.getBalance());
+            System.out.printf("Current Money Provided: $%.2f\n", money.getBalance());
             System.out.println("(1) Feed Money");
             System.out.println("(2) Select Product");
             System.out.println("(3) Finish Transaction");
@@ -117,6 +120,8 @@ public class MainMenu {
         selectedItem.takeAwayRemaining();
         logTransaction(selectedItem.getName(), selectedItem.getPrice());
         System.out.println(selectedItem.toString());
+        String Category = selectedItem.getCategory();
+        System.out.println(selectedItem.getDispenseMessage(Category));
     }
 
     private void finishTransaction() {

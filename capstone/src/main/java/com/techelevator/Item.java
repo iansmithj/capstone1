@@ -2,7 +2,7 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-public abstract class Item {
+public class Item {
 
     private String slot;
 
@@ -51,7 +51,18 @@ public abstract class Item {
     @Override
     public String toString() {
         return slot + " | " + name + " | " + category + " | $" + price + " | QTY: " + getRemaining();
+
     }
 
-    public abstract String getDispenseMessage();
+    public String getDispenseMessage(String Category) {
+        if(Category.equals("Chip")) {
+            return "Crunch Crunch, Yum!";
+        } else if (Category.equals("Gum")) {
+            return "Chew Chew, Yum!";
+        } else if (Category.equals("Drink")) {
+            return "Glug Glug, Yum";
+        } else {
+            return "Munch Munch, Yum!";
+        }
+    }
 }

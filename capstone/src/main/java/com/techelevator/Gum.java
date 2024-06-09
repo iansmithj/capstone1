@@ -8,7 +8,7 @@ public class Gum extends Item {
         super(slot, name, price, category);
     }
 
-    @Override
+
     public String getDispenseMessage() {
         return " Chew Chew, Yum!";
     }
