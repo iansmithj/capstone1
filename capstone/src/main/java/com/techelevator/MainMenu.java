@@ -1,11 +1,9 @@
 package com.techelevator;
 
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.math.BigDecimal;
+import java.nio.file.Path;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -34,6 +32,8 @@ public class MainMenu {
                 purchaseMenu();
             } else if (typeIn.equals("3")) {
                 break;
+            } else if (typeIn.equals("4")) {
+                secretSalesReport();
             } else {
                 System.out.println("Not a correct selection. Try again with either a 1, 2, or 3.");
             }
@@ -140,7 +140,16 @@ public class MainMenu {
             System.out.println("Error writing in the Log.txt file.");
         }
     }
+
+    private void secretSalesReport() {
+        String filepath = "Log.txt";
+
+        try (Scanner scanner = new Scanner(new FileInputStream(filepath))) {
+            while (scanner.hasNextLine()) {
+                System.out.println(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error reading file");
+        }
+    }
 }
-
-
-
